@@ -1,3 +1,5 @@
+//programa presentado con el fin de llevar a cabo el trabajo colaborativo
+
 #include <stdio.h>
 #include <string.h>
 
