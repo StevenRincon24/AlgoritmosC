@@ -1,6 +1,37 @@
 #include <stdio.h>
 #include <string.h>
 
+void contarPalabraEnCadena(){
+    char palabra[1000];
+    char cadena[1000];
+    int contadorPrincipal=0;
+    int contador=0;
+
+    printf("Ingrese la palabra:\n");
+    fflush(stdin);
+    gets(palabra);
+
+    printf("Ingrese la cadena a buscar:\n");
+    fflush(stdin);
+    gets(cadena);
+    for (int i = 0; i < strlen(palabra); ++i) {
+
+            for (int j = 0; j < strlen(cadena); ++j) {
+                if (palabra[j+i]==cadena[j]||palabra[j+i]-32==cadena[j]||palabra[j+i]==cadena[j]-32){
+                    contador++;
+                }
+            }
+
+            if (contador==strlen(cadena)){
+                contadorPrincipal++;
+            }
+        contador=0;
+
+    }
+
+    printf("La palabra se repite: %i\n", contadorPrincipal);
+}
+
 void borrarCaracter(){
         //ejercicios 6
     char palabra[1000],palabraModificada[1000]="";
@@ -45,7 +76,7 @@ void menu(){
             case 1:printf("eligio %i\n", option);
                 break;
 
-            case 2:printf("eligio %i\n", option);
+            case 2:contarPalabraEnCadena();
                 break;
 
             case 3:printf("eligio %i\n", option);
