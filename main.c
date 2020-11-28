@@ -97,6 +97,43 @@ void borrarCaracter(){
 
 }
 
+void interseccion(){
+    char palabra[1000]="";
+    char palabraDos[1000]="";
+    char palabraModificada[1000]="";
+    char palabraFinal[1000]="";
+    int contador=0;
+    int contadorDos=0;
+
+
+    printf("Ingrese la cadena uno \n");
+    fflush(stdin);
+    gets(palabra);
+    printf("Ingrese la cadena dos a comparar\n");
+    fflush(stdin);
+    gets(palabraDos);
+
+    for (int i = 0; i < strlen(palabra); ++i) {
+
+        for (int j = 0; j < strlen(palabraDos); ++j) {
+
+            if (palabra[i]==palabraDos[j]||palabra[i]==palabraDos[j]-32||palabra[i]-32==palabraDos[j]){
+                palabraModificada[contador]=palabra[i];
+                contador++;
+                break;
+            }
+        }
+    }
+    contador=0;
+    while(palabra[contador])
+    {
+        if(!strchr(palabraFinal,palabraModificada[contador]))
+            palabraFinal[contadorDos++]=palabraModificada[contador];
+        contador++;
+    }
+    printf("La palabra modificada es: %s\n", palabraFinal);
+}
+
 void diferenciaEntreCadenas(){
 
     char palabra[1000];
@@ -172,7 +209,7 @@ void menu(){
                 case 6:borrarCaracter();
                     break;
 
-                case 7:printf("eligio %i\n", option);
+                case 7:interseccion();
                     break;
 
                 case 8:diferenciaEntreCadenas();
