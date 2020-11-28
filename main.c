@@ -29,35 +29,6 @@ void NombrePropio(){
     printf(    "La cadena convertida a nombre propio queda asi:\n-------------------------------------------------------------------------------------------------------------------\n%s------------------------------------------------------------------------------------------------------------------- \n" , Cadena);
 }
 
-
-void LlenarCaracteres(){
-    fflush(stdin);
-    int numeroRepeticiones = 0, sentido;
-    char palabra[1000], caracter ;
-    printf("Ingrese la cadena principal:\n");
-    scanf("%[^\n]", & palabra);
-    printf("ingrese el caracter: \n");
-    fflush(stdin );
-    scanf("%c" , &caracter);
-    printf("ingrese el numero de repeticiones:\n");
-    scanf("%d" , &numeroRepeticiones);
-    printf("Ingrese el sentido que quiere anhadir los caracteres (1 Para derecha, 2 Para izquierda)\n");
-    scanf("%d" , &sentido);
-    char Repetidos[numeroRepeticiones + 1];
-
-    for (int i = 0; i < numeroRepeticiones; ++i) {
-        Repetidos[i] =  caracter;
-    }
-    printf("Repetidos %s\n", Repetidos);
-    if (sentido==1){
-        printf("\nLa palabra final queda asi: %s%s\n" , palabra, Repetidos);
-    }else if (sentido == 2){
-
-        printf("La palabra queda asi: %s%s\n" ,Repetidos, palabra);
-    }
-}
-
-
 void menu(){
     int option;
     while (option != 10){
@@ -86,7 +57,6 @@ void menu(){
                 break;
 
             case 5:
-                LlenarCaracteres();
                 break;
 
             case 6:
