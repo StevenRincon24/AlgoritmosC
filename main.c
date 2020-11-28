@@ -2,7 +2,7 @@
 #include <string.h>
 
 void borrarCaracter(){
-
+        //ejercicios 6
     char palabra[1000],palabraModificada[1000]="";
     char caracter[1];
     int contador=0;
