@@ -58,6 +58,63 @@ void LlenarCaracteres(){
     }
 }
 
+
+void eliminarCaracteresIzquierdaDerecha(){
+    char  cadenaUno[1000], cadenaDos[1000];
+    int poscion;
+    printf("Ingrese la cadena Uno\n");
+    fflush(stdin);
+    gets(cadenaUno);
+    printf("Ingrese la cadena Dos\n");
+    gets(cadenaDos);
+    printf("1. Para izquierda o 2. Para derecha\n");
+    fflush(stdin);
+    scanf("%i", &poscion);
+    int posicionInicio=0;
+    int condicion=0;
+    if ( poscion == 1 ){
+        for (int i = 0; i < strlen(cadenaUno); i++) {
+            for (int j = 0; j < strlen(cadenaDos); ++j) {
+                if (cadenaDos[j] == cadenaUno[i] || (cadenaDos[j]-32 == cadenaUno[i]) || (cadenaDos[j] == cadenaUno[i]-32) ||
+                    (cadenaDos[j]== ' ' || cadenaUno[i]==' ')  ){
+                    posicionInicio++;
+                    cadenaUno[i] = ' ';
+                    break;
+                }if (j== strlen(cadenaDos) -1){
+                    condicion = 1;
+                    break;
+                }
+            } if (condicion ==1){
+                break;
+            }
+        }
+        char cadenaFinal[1000];
+        int contador=0;
+        for (int i = posicionInicio; i < strlen(cadenaUno); ++i) {
+            cadenaFinal[contador] = cadenaUno[i];
+            contador++;
+        }
+        printf("la cadena final queda de la siguiente manera: %s\n" , cadenaFinal);
+    }else if ( poscion == 2 ){
+        for (int i = strlen(cadenaUno)-1; i > 0; i--) {
+            for (int j = 0; j < strlen(cadenaDos); ++j) {
+                if (cadenaDos[j] == cadenaUno[i] || (cadenaDos[j]-32 == cadenaUno[i]) || (cadenaDos[j] == cadenaUno[i]-32) ||
+                    (cadenaDos[j]== ' ' || cadenaUno[i]==' ')  ){
+                    cadenaUno[i] = ' ';
+                    break;
+                }if (j== strlen(cadenaDos) -1){
+                    condicion = 1;
+                    break;
+                }
+            } if (condicion ==1){
+                break;
+            }
+        }
+        printf("La cadena queda asi: %s\n" , cadenaUno);
+    }
+
+}
+
 void menu(){
     int option;
     while (option != 10){
@@ -99,7 +156,7 @@ void menu(){
                 break;
 
             case 9:
-
+                eliminarCaracteresIzquierdaDerecha();
                 break;
 
             default :
