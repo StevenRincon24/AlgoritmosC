@@ -104,13 +104,14 @@ void diferenciaEntreCadenas(){
 }
 
 void menu(){
-    int option;
+    int option=0;
     while (option != 10){
 
         printf("Ingrese la opcion deseada:\n1.Convertir en nombre propio\n"
                "2.Contar palabras en una cadena\n3.Encriptar cadena\n4.Desencriptar cadena"
                "\n5.Llenar caracteres\n6.Borrar caracteres\n7.Intersección\n8.Diferencia entre dos cadenas"
                "\n9.Borrar caracteres por izquierda o derecha\n10.Salir\n");
+
 
         scanf("%i",&option);
 
