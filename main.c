@@ -14,7 +14,9 @@ void contarPalabraEnCadena(){
     printf("Ingrese la cadena a buscar:\n");
     fflush(stdin);
     gets(cadena);
-    for (int i = 0; i < strlen(palabra); ++i) {
+
+
+        for (int i = 0; i < strlen(palabra); ++i) {
 
             for (int j = 0; j < strlen(cadena); ++j) {
                 if (palabra[j+i]==cadena[j]||palabra[j+i]-32==cadena[j]||palabra[j+i]==cadena[j]-32){
@@ -25,11 +27,12 @@ void contarPalabraEnCadena(){
             if (contador==strlen(cadena)){
                 contadorPrincipal++;
             }
-        contador=0;
+            contador=0;
 
-    }
+        }
 
-    printf("La palabra se repite: %i\n", contadorPrincipal);
+        printf("La palabra se repite: %i\n", contadorPrincipal);
+
 }
 
 void borrarCaracter(){
@@ -107,53 +110,61 @@ void menu(){
     int option=0;
     while (option != 10){
 
-        printf("Ingrese la opcion deseada:\n1.Convertir en nombre propio\n"
+        printf("Ingrese la opci%cn deseada:\n1.Convertir en nombre propio\n"
                "2.Contar palabras en una cadena\n3.Encriptar cadena\n4.Desencriptar cadena"
                "\n5.Llenar caracteres\n6.Borrar caracteres\n7.Intersección\n8.Diferencia entre dos cadenas"
-               "\n9.Borrar caracteres por izquierda o derecha\n10.Salir\n");
+               "\n9.Borrar caracteres por izquierda o derecha\n10.Salir\n",162);
 
-
+        fflush(stdin);
         scanf("%i",&option);
 
-        switch (option) {
+        if((option>0&&option<10)){
+            switch (option) {
 
-            case 1:printf("eligio %i\n", option);
-                break;
+                case 1:printf("eligio %i\n", option);
+                    break;
 
-            case 2:contarPalabraEnCadena();
-                break;
+                case 2:contarPalabraEnCadena();
+                    break;
 
-            case 3:printf("eligio %i\n", option);
-                break;
+                case 3:printf("eligio %i\n", option);
+                    break;
 
-            case 4:printf("eligio %i\n", option);
-                break;
+                case 4:printf("eligio %i\n", option);
+                    break;
 
-            case 5:printf("eligio %i\n", option);
-                break;
+                case 5:printf("eligio %i\n", option);
+                    break;
 
-            case 6:borrarCaracter();
-                break;
+                case 6:borrarCaracter();
+                    break;
 
-            case 7:printf("eligio %i\n", option);
-                break;
+                case 7:printf("eligio %i\n", option);
+                    break;
 
-            case 8:diferenciaEntreCadenas();
-                break;
+                case 8:diferenciaEntreCadenas();
+                    break;
 
-            case 9:printf("eligio %i\n", option);
-                break;
+                case 9:printf("eligio %i\n", option);
+                    break;
 
-            case 10:
+                case 10:
 
-                break;
+                    break;
 
-            default :
-                printf("Opción no valida");
-                break;
+                default :
+
+                    break;
+
+            }
+        }else{
+            printf("**********Ingrese una opci%cn valida**********\n\n",162);
+        }
+
 
         }
-    }
+
+
 }
 
 int main() {
