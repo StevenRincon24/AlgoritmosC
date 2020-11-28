@@ -29,55 +29,59 @@ void NombrePropio(){
     printf(    "La cadena convertida a nombre propio queda asi:\n-------------------------------------------------------------------------------------------------------------------\n%s------------------------------------------------------------------------------------------------------------------- \n" , Cadena);
 }
 
-void menu(){
+void menu() {
     int option;
-    while (option != 10){
+    printf("Ingrese la opci%cn deseada:\n1.Convertir en nombre propio\n"
+           "2.Contar palabras en una cadena\n3.Encriptar cadena\n4.Desencriptar cadena"
+           "\n5.Llenar caracteres\n6.Borrar caracteres\n7.Intersección\n8.Diferencia entre dos cadenas"
+           "\n9.Borrar caracteres por izquierda o derecha\n10.Salir\n", 162);
+    fflush(stdin);
+    scanf("%i", &option);
+    if ( option >= 1 && option <=10 ){
+        while (option != 10) {
+            switch (option) {
+                case 1:
+                    NombrePropio();
+                    menu();
+                    printf("\n");
+                    break;
 
-        printf("Ingrese la opción deseada:\n1.Convertir en nombre propio\n"
-               "2.Contar palabras en una cadena\n3.Encriptar cadena\n4.Desencriptar cadena"
-               "\n5.Llenar caracteres\n6.Borrar caracteres\n7.Intersección\n8.Diferencia entre dos cadenas"
-               "\n9.Borrar caracteres por izquierda o derecha\n10.Salir\n");
+                case 2:
+                    break;
 
-        scanf("%i",&option);
+                case 3:
+                    break;
 
-        switch (option) {
+                case 4:
+                    break;
 
-            case 1:
-                NombrePropio();
-                printf("\n");
-                break;
+                case 5:
+                    break;
 
-            case 2:
-                break;
+                case 6:
+                    break;
 
-            case 3:
-                break;
+                case 7:
+                    break;
 
-            case 4:
-                break;
+                case 8:
+                    break;
 
-            case 5:
-                break;
+                case 9:
 
-            case 6:
-                break;
+                    break;
 
-            case 7:
-                break;
+                default :
+                    printf("Opción no valida");
+                    break;
 
-            case 8:
-                break;
-
-            case 9:
-
-                break;
-
-            default :
-                printf("Opción no valida");
-                break;
-
+            }
         }
+    }else{
+        printf("xxxx Opcion invalida xxxx \nIngrese una opcion valida\n");
+        menu();
     }
+
 }
 
 int main() {
