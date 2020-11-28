@@ -58,6 +58,8 @@ void LlenarCaracteres(){
     }
 }
 
+
+
 void menu(){
     int option;
     while (option != 10){
@@ -111,6 +113,19 @@ void menu(){
 }
 
 int main() {
-    menu();
-    return 0;
+    char resultado[27]="";
+    char palabra[50];
+    int i=0,j=0;
+    printf("Ingresa una frase!\n");scanf("%s",palabra);
+    while(palabra[i])
+    {
+        if(!strchr(resultado,palabra[i]))
+            resultado[j++]=palabra[i];
+        i++;
+    }
+    resultado[j]='\0';
+    printf("\nEl resultado seria!\n%s",resultado);
+
+    getchar();
+    return(0);
 }
