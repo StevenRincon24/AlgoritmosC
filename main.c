@@ -39,10 +39,11 @@ void borrarCaracter(){
     int contador=0;
 
 
+
     printf("Ingrese la palabra\n");
     fflush(stdin);
     gets(palabra);
-    printf("Ingrese el caracter a borrar\n");
+    printf("Ingrese el palabraDos a borrar\n");
     fflush(stdin);
     gets(caracter);
 
@@ -58,6 +59,48 @@ void borrarCaracter(){
 
     printf("La palabra modificada es: %s\n", palabraModificada);
 
+}
+
+void diferenciaEntreCadenas(){
+
+    char palabra[1000];
+    char palabraDos[1000];
+    int contador=0;
+    int k=0;
+
+
+    printf("Ingrese la cadena uno \n");
+    fflush(stdin);
+    gets(palabra);
+    printf("Ingrese la cadena dos a comparar\n");
+    fflush(stdin);
+    gets(palabraDos);
+
+    for (int i = 0; i < strlen(palabraDos);i++) {
+        contador=0;
+        for (int j = 0; j <strlen(palabra) ; ++j) {
+
+                if (palabra[j]!=palabraDos[i]&&(palabra[j]!=palabraDos[i]-32)) {
+                    palabra[contador]=palabra[j];
+                    contador++;
+
+                }else{
+                    palabra[strlen(palabra)-k]=' ';
+                    k++;
+                }
+        }
+        k=0;
+    }
+    contador=0;
+    char palabraFinal[1000]="";
+    for (int i = 0; i < strlen(palabra); ++i) {
+        if ((palabra[i]>='A'&&palabra[i]<='z')||palabra[i]==' '){
+               palabraFinal[contador]=palabra[i];
+               contador++;
+
+        }
+    }
+    printf("La palabra modificada es: %s\n", palabraFinal);
 }
 
 void menu(){
@@ -94,7 +137,7 @@ void menu(){
             case 7:printf("eligio %i\n", option);
                 break;
 
-            case 8:printf("eligio %i\n", option);
+            case 8:diferenciaEntreCadenas();
                 break;
 
             case 9:printf("eligio %i\n", option);
