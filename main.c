@@ -35,6 +35,39 @@ void contarPalabraEnCadena(){
 
 }
 
+void encriptar(){
+
+    char cadena[1000]="";
+    fflush(stdin);
+    printf("Ingrese la cadena a encriptar\n");
+    gets(cadena);
+
+    for (int i = 0; i < strlen(cadena); i++) {
+       if (cadena[i]!=' '){
+           cadena[i]=cadena[i]-strlen(cadena)+i;
+       }else{
+           cadena[i]=32;
+       }
+    }
+    printf("La cadena encriptada es: %s\n", cadena);
+}
+
+void desencriptar(){
+    char cadena[1000]="";
+    fflush(stdin);
+    printf("Ingrese la cadena a desencriptar\n");
+    gets(cadena);
+
+    for (int i = strlen(cadena)-1; i >=0 ; i--) {
+            if (cadena[i]!=32){
+                cadena[i]=cadena[i]+strlen(cadena)-i;
+            }else{
+                cadena[i]=' ';
+            }
+    }
+    printf("La cadena desencriptada es: %s\n", cadena);
+}
+
 void borrarCaracter(){
         //ejercicios 6
     char palabra[1000],palabraModificada[1000]="";
@@ -127,10 +160,10 @@ void menu(){
                 case 2:contarPalabraEnCadena();
                     break;
 
-                case 3:printf("eligio %i\n", option);
+                case 3:encriptar();
                     break;
 
-                case 4:printf("eligio %i\n", option);
+                case 4:desencriptar();
                     break;
 
                 case 5:printf("eligio %i\n", option);
