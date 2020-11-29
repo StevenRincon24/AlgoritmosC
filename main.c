@@ -31,8 +31,6 @@ void nombrePropio(){
             }
         }
     }
-
-
     printf("La cadena convertida a nombre propio queda asi:\n-------------------------------------------------------------------------------------------------------------------\n%s------------------------------------------------------------------------------------------------------------------- \n" , Cadena);
 }
 
@@ -45,38 +43,28 @@ void contarPalabraEnCadena(){
     printf("Ingrese la palabra:\n");
     fflush(stdin);
     gets(palabra);
-
     printf("Ingrese la cadena a buscar:\n");
     fflush(stdin);
     gets(cadena);
-
-
         for (int i = 0; i < strlen(palabra); ++i) {
-
             for (int j = 0; j < strlen(cadena); ++j) {
                 if (palabra[j+i]==cadena[j]||palabra[j+i]-32==cadena[j]||palabra[j+i]==cadena[j]-32){
                     contador++;
                 }
             }
-
             if (contador==strlen(cadena)){
                 contadorPrincipal++;
             }
             contador=0;
-
         }
-
         printf("La palabra se repite %i veces\n", contadorPrincipal);
-
 }
 
 void encriptar(){
-
     char cadena[1000]="";
     fflush(stdin);
     printf("Ingrese la cadena a encriptar\n");
     gets(cadena);
-
     for (int i = 0; i < strlen(cadena); i++) {
        if (cadena[i]!=' '){
            cadena[i]=cadena[i]-strlen(cadena)+i;
@@ -92,7 +80,6 @@ void desencriptar(){
     fflush(stdin);
     printf("Ingrese la cadena a desencriptar\n");
     gets(cadena);
-
     for (int i = strlen(cadena)-1; i >=0 ; i--) {
             if (cadena[i]!=32){
                 cadena[i]=cadena[i]+strlen(cadena)-i;
@@ -142,9 +129,7 @@ void borrarCaracter(){
     char palabra[1000],palabraModificada[1000]="";
     char caracter[1];
     int contador=0;
-
-
-
+    
     printf("Ingrese la palabra\n");
     fflush(stdin);
     gets(palabra);
@@ -153,7 +138,6 @@ void borrarCaracter(){
     gets(caracter);
 
     for (int i = 0; i < strlen(palabra);i++) {
-
         if (palabra[i]!=0){
             if (palabra[i]!=caracter[0]&&(palabra[i]!=caracter[0]-32)) {
                 palabraModificada[contador]=palabra[i];
@@ -161,9 +145,7 @@ void borrarCaracter(){
             }
         }
     }
-
     printf("La palabra modificada es: %s\n", palabraModificada);
-
 }
 
 void interseccion(){
@@ -173,8 +155,7 @@ void interseccion(){
     char palabraFinal[1000]="";
     int contador=0;
     int contadorDos=0;
-
-
+    
     printf("Ingrese la cadena uno \n");
     fflush(stdin);
     gets(palabra);
@@ -183,9 +164,7 @@ void interseccion(){
     gets(palabraDos);
 
     for (int i = 0; i < strlen(palabra); ++i) {
-
         for (int j = 0; j < strlen(palabraDos); ++j) {
-
             if (palabra[i]==palabraDos[j]||palabra[i]==palabraDos[j]-32||palabra[i]-32==palabraDos[j]){
                 palabraModificada[contador]=palabra[i];
                 contador++;
@@ -204,28 +183,22 @@ void interseccion(){
 }
 
 void diferenciaEntreCadenas(){
-
     char palabra[1000];
     char palabraDos[1000];
     int contador=0;
     int k=0;
-
-
     printf("Ingrese la cadena uno \n");
     fflush(stdin);
     gets(palabra);
     printf("Ingrese la cadena dos a comparar\n");
     fflush(stdin);
     gets(palabraDos);
-
     for (int i = 0; i < strlen(palabraDos);i++) {
         contador=0;
         for (int j = 0; j <strlen(palabra) ; ++j) {
-
                 if (palabra[j]!=palabraDos[i]&&(palabra[j]!=palabraDos[i]-32)&&(palabra[j]-32!=palabraDos[i])) {
                     palabra[contador]=palabra[j];
                     contador++;
-
                 }else{
                     palabra[strlen(palabra)-k]=' ';
                     k++;
@@ -239,7 +212,6 @@ void diferenciaEntreCadenas(){
         if ((palabra[i]>='A'&&palabra[i]<='z')||palabra[i]==' '){
                palabraFinal[contador]=palabra[i];
                contador++;
-
         }
     }
     printf("La palabra modificada es: %s\n", palabraFinal);
@@ -306,7 +278,6 @@ void eliminarCaracteresIzquierdaDerecha(){
         }
         printf("La cadena queda asi: %s\n" , cadenaUno);
     }
-
 }
 
 void menu(){
