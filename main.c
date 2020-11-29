@@ -6,12 +6,17 @@ void nombrePropio(){
     printf("Ingrese la palabra que desa convertir\n");
     fflush(stdin);
     fgets(Cadena,1000,stdin);
+    int tamanhio =( strlen(Cadena))-1;
     for (int i = 0; i < strlen(Cadena); ++i) {
         int Ascci = Cadena[i];
         if (Cadena!=0){
             if (i==0  && (Ascci >= 97 && Ascci <=122)){
                 Cadena[i] = Cadena[i]-32;
-            }if (Ascci >= 65 && Ascci <=90 & i!=0  && Cadena[i-1]!= ' ') {
+            }
+            if ( i == tamanhio && (Cadena[i-1]>='A' && Cadena[i-1]<='Z')){
+                Cadena[i-1] = Cadena[i-1]+32;
+            }
+            if (Ascci >= 65 && Ascci <=90 & i!=0  && Cadena[i-1]!= ' ') {
                 Cadena[i] = Cadena[i]+32;
             }if ( Cadena[i+2]== ' ' && Cadena[i]==' ' && (Cadena[i+1]>='A' && Cadena[i+1]<='Z')){
                 Cadena[i+1] = Cadena[i+1] + 32;
@@ -26,6 +31,8 @@ void nombrePropio(){
             }
         }
     }
+
+
     printf("La cadena convertida a nombre propio queda asi:\n-------------------------------------------------------------------------------------------------------------------\n%s------------------------------------------------------------------------------------------------------------------- \n" , Cadena);
 }
 
@@ -313,6 +320,7 @@ void menu(){
 
         fflush(stdin);
         scanf("%i",&option);
+
 
         if((option>0&&option<=10)){
             switch (option) {
