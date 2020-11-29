@@ -1,6 +1,6 @@
 #include <stdio.h>
 #include <string.h>
-
+// SOLUCION EJERCICIO 1 FINAL
 void NombrePropio(){
     char Cadena[1000];
     printf("Ingrese la palabra que desa convertir\n");
