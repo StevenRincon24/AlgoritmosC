@@ -1,6 +1,8 @@
 #include <stdio.h>
 #include <string.h>
-
+#include <ctype.h>
+#include <stdlib.h>
+#include <conio.h>
 void NombrePropio(){
     char Cadena[1000];
     printf("Ingrese la palabra que desa convertir\n");
@@ -40,9 +42,18 @@ void LlenarCaracteres(){
     scanf("%c" , &caracter);
     printf("ingrese el numero de repeticiones:\n");
     fflush(stdin );
-    scanf("%d" , &numeroRepeticiones);
+    scanf("%i" , &numeroRepeticiones);
     printf("Ingrese el sentido que quiere anhadir los caracteres (1 Para derecha, 2 Para izquierda)\n");
-    scanf("%d" , &sentido);
+    fflush(stdin);
+    scanf("%i" , &sentido);
+    do {
+        printf("Ingrese una opci%cn valida\n", 162);
+        printf("Ingrese el sentido que quiere anhadir los caracteres (1 Para derecha, 2 Para izquierda)\n");
+        fflush(stdin);
+        sentido = 0;
+        sentido = scanf("%i" , &sentido);
+    } while (sentido != 1 && sentido != 2);
+
     char Repetidos[1000]="";
 
     for (int i = 0; i < numeroRepeticiones; ++i) {
@@ -55,56 +66,65 @@ void LlenarCaracteres(){
     }
 }
 
-void menu(){
+void menu() {
     int option;
-    while (option != 10){
+    printf("Ingrese la opci%cn deseada:\n1.Convertir en nombre propio\n"
+           "2.Contar palabras en una cadena\n3.Encriptar cadena\n4.Desencriptar cadena"
+           "\n5.Llenar caracteres\n6.Borrar caracteres\n7.Intersecci%cn\n8.Diferencia entre dos cadenas"
+           "\n9.Borrar caracteres por izquierda o derecha\n10.Salir\n", 162,162);
+    fflush(stdin);
+    scanf("%i", &option);
 
-        printf("Ingrese la opción deseada:\n1.Convertir en nombre propio\n"
-               "2.Contar palabras en una cadena\n3.Encriptar cadena\n4.Desencriptar cadena"
-               "\n5.Llenar caracteres\n6.Borrar caracteres\n7.Intersección\n8.Diferencia entre dos cadenas"
-               "\n9.Borrar caracteres por izquierda o derecha\n10.Salir\n");
 
-        scanf("%i",&option);
 
-        switch (option) {
+    if ( option >= 1 && option <=10 ){
+        while (option != 10) {
+            switch (option) {
+                case 1:
+                    NombrePropio();
+                    menu();
+                    printf("\n");
+                    break;
 
-            case 1:
-                NombrePropio();
-                printf("\n");
-                break;
+                case 2:
+                    break;
 
-            case 2:
-                break;
+                case 3:
+                    break;
 
-            case 3:
-                break;
+                case 4:
+                    break;
 
-            case 4:
-                break;
+                case 5:
+                    LlenarCaracteres();
+                    menu();
+                    printf("\n");
+                    break;
 
-            case 5:
-                LlenarCaracteres();
-                break;
+                case 6:
+                    break;
 
-            case 6:
-                break;
+                case 7:
+                    break;
 
-            case 7:
-                break;
+                case 8:
+                    break;
 
-            case 8:
-                break;
+                case 9:
 
-            case 9:
+                    break;
 
-                break;
+                default :
+                    printf("Opción no valida");
+                    break;
 
-            default :
-                printf("Opción no valida");
-                break;
-
+            }
         }
+    }else{
+        printf("xxxx Opci%cn invalida xxxx \nIngrese una opci%cn valida\n",162,162);
+        menu();
     }
+
 }
 
 int main() {
