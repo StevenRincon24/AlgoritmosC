@@ -58,7 +58,6 @@ void LlenarCaracteres(){
     }
 }
 
-
 void eliminarCaracteresIzquierdaDerecha(){
     char  cadenaUno[1000], cadenaDos[1000];
     int poscion;
