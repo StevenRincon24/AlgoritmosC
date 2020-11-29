@@ -106,7 +106,7 @@ void borrarCaracter(){
     printf("Ingrese la palabra\n");
     fflush(stdin);
     gets(palabra);
-    printf("Ingrese el palabraDos a borrar\n");
+    printf("Ingrese el caracter a borrar\n");
     fflush(stdin);
     gets(caracter);
 
@@ -215,7 +215,7 @@ void menu(){
         fflush(stdin);
         scanf("%i",&option);
 
-        if((option>0&&option<10)){
+        if((option>0&&option<=10)){
             switch (option) {
 
                 case 1:printf("eligio %i\n", option);
