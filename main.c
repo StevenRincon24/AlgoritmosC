@@ -96,7 +96,7 @@ void llenarCaracteres(){
     char palabra[1000]="", caracter=' ' ;
     printf("Ingrese la cadena principal:\n");
     scanf("%[^\n]", & palabra);
-    printf("Ingrese el caracter: \n");
+    printf("Ingrese el caracter - Recuerde que solo se tomara el primer caracter que se ingresa: \n");
     fflush(stdin );
     scanf("%c" , &caracter);
     printf("Ingrese el n%cmero de repeticiones:\n",163);
@@ -125,15 +125,13 @@ void llenarCaracteres(){
 }
 
 void borrarCaracter(){
-    //ejercicios 6
     char palabra[1000],palabraModificada[1000]="";
     char caracter[1];
     int contador=0;
-
-    printf("Ingrese la palabra\n");
+    printf("Ingrese la cadena\n");
     fflush(stdin);
     gets(palabra);
-    printf("Ingrese el caracter a borrar\n");
+    printf("Ingrese el caracter a borrar - Recuerde que solo se tomara el primer caracter que se ingresa: \n");
     fflush(stdin);
     gets(caracter);
 
@@ -173,7 +171,7 @@ void interseccion(){
             palabraDos[i] = palabraDos[i] + 32;
         }
     }
-    
+
     for (int i = 0; i < strlen(palabra); ++i) {
         for (int j = 0; j < strlen(palabraDos); ++j) {
             if (palabra[i]==palabraDos[j]){
@@ -190,7 +188,7 @@ void interseccion(){
             palabraFinal[contadorDos++]=palabraModificada[contador];
         contador++;
     }
-    printf("La palabra modificada es: %s\n", palabraFinal);
+    printf("La intersecci%c de las dos cadenas es la siguiente: adena%s\n", 162,palabraFinal);
 }
 
 void diferenciaEntreCadenas(){
@@ -201,7 +199,7 @@ void diferenciaEntreCadenas(){
     printf("Ingrese la cadena uno \n");
     fflush(stdin);
     gets(palabra);
-    printf("Ingrese la cadena dos a comparar\n");
+    printf("Ingrese la cadena a comparar\n");
     fflush(stdin);
     gets(palabraDos);
     for (int i = 0; i < strlen(palabraDos);i++) {
@@ -225,7 +223,7 @@ void diferenciaEntreCadenas(){
             contador++;
         }
     }
-    printf("La palabra modificada es: %s\n", palabraFinal);
+    printf("La diferencia entre las dos cadenas es: %s\n", palabraFinal);
 }
 
 void eliminarCaracteresIzquierdaDerecha(){
@@ -265,13 +263,17 @@ void eliminarCaracteresIzquierdaDerecha(){
                 break;
             }
         }
-        char cadenaFinal[1000];
+        char cadenaFinal[1000]="";
         int contador=0;
         for (int i = posicionInicio; i < strlen(cadenaUno); ++i) {
             cadenaFinal[contador] = cadenaUno[i];
             contador++;
         }
-        printf("La cadena final queda de la siguiente manera: %s\n" , cadenaFinal);
+        if (strlen(cadenaFinal)!=0){
+        printf("La cadena con los caracteres eliminados a la izquierda queda de la siguienre manera: %s\n" , cadenaFinal);
+        } else{
+            printf("Todos los caracteres de la cadena uno son comunes con los de la cadena dos\n");
+        }
     }else if ( poscion == 2 ){
         for (int i = strlen(cadenaUno)-1; i > 0; i--) {
             for (int j = 0; j < strlen(cadenaDos); ++j) {
@@ -287,7 +289,7 @@ void eliminarCaracteresIzquierdaDerecha(){
                 break;
             }
         }
-        printf("La cadena queda asi: %s\n" , cadenaUno);
+        printf("La cadena con los caracteres eliminados a la derecha queda de la siguienre manera: %s\n" , cadenaUno);
     }
 }
 
@@ -341,7 +343,6 @@ void menu(){
                 default :
 
                     break;
-
             }
         }else{
             printf("**********Ingrese una opci%cn valida**********\n\n",162);
