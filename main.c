@@ -61,6 +61,45 @@ void contarPalabraEnCadena(){
 }
 
 void encriptar(){
+    char frase[500];
+    printf("Introduzca una frase a encriptar: ");
+    fflush(stdin);
+    gets(frase);
+    int sum=0;
+    int x;
+    for(x = 0; x < 500; x++)
+    {
+        if (frase[x]!='\0')
+        {
+            frase[x]=frase[x]+2;
+        }
+    }
+    printf("************************************************************************\n");
+    printf("La nueva frase es: ",sum);
+    printf("\n%s\n",frase);
+    printf("************************************************************************\n");
+}
+void desencriptar(){
+    char frase[500];
+    printf("Introduzca una frase a desencriptar: ");
+    fflush(stdin);
+    gets(frase);
+    int sum=0;
+    int x;
+    for(x = 0; x < 500; x++)
+    {
+        if (frase[x]!='\0')
+        {
+            frase[x]=frase[x]-2;
+        }
+    }
+    printf("************************************************************************\n");
+    printf("La nueva frase es: ",sum);
+    printf("\n%s\n",frase);
+    printf("************************************************************************\n");
+}
+
+/*void encriptar(){
     char cadena[1000]="";
     fflush(stdin);
     printf("Ingrese la cadena a encriptar\n");
@@ -88,7 +127,7 @@ void desencriptar(){
         }
     }
     printf("La cadena desencriptada es: %s\n", cadena);
-}
+}*/
 
 void llenarCaracteres(){
     fflush(stdin);
@@ -116,7 +155,7 @@ void llenarCaracteres(){
     for (int i = 0; i < numeroRepeticiones; ++i) {
         Repetidos[i] =  caracter;
     }
-    printf("%d", sentido);
+
     if (sentido==1){
         printf("La palabra final queda as%c: %s%s\n" ,161, palabra, Repetidos);
     }else if (sentido == 2){
