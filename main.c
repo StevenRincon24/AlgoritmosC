@@ -46,6 +46,7 @@ void contarPalabraEnCadena(){
     printf("Ingrese la cadena a buscar:\n");
     fflush(stdin);
     gets(cadena);
+<<<<<<< HEAD
     for (int i = 0; i < strlen(palabra); ++i) {
         for (int j = 0; j < strlen(cadena); ++j) {
             if (palabra[j+i]==cadena[j]||palabra[j+i]-32==cadena[j]||palabra[j+i]==cadena[j]-32){
@@ -58,6 +59,20 @@ void contarPalabraEnCadena(){
         contador=0;
     }
     printf("La palabra se repite %i veces\n", contadorPrincipal);
+=======
+        for (int i = 0; i < strlen(palabra); ++i) {
+            for (int j = 0; j < strlen(cadena); ++j) {
+                if (palabra[j+i]==cadena[j]||palabra[j+i]-32==cadena[j]||palabra[j+i]==cadena[j]-32){
+                    contador++;
+                }
+            }
+            if (contador==strlen(cadena)){
+                contadorPrincipal++;
+            }
+            contador=0;
+        }
+        printf("La palabra se repite %i veces\n", contadorPrincipal);
+>>>>>>> 1808c75801641803029ba59276108105b9759f18
 }
 
 void encriptar(){
@@ -128,7 +143,12 @@ void borrarCaracter(){
     char palabra[1000],palabraModificada[1000]="";
     char caracter[1];
     int contador=0;
+<<<<<<< HEAD
     printf("Ingrese la cadena\n");
+=======
+    
+    printf("Ingrese la palabra\n");
+>>>>>>> 1808c75801641803029ba59276108105b9759f18
     fflush(stdin);
     gets(palabra);
     printf("Ingrese el caracter a borrar - Recuerde que solo se tomara el primer caracter que se ingresa: \n");
@@ -153,7 +173,11 @@ void interseccion(){
     char palabraFinal[1000]="";
     int contador=0;
     int contadorDos=0;
+<<<<<<< HEAD
 
+=======
+    
+>>>>>>> 1808c75801641803029ba59276108105b9759f18
     printf("Ingrese la cadena uno \n");
     fflush(stdin);
     gets(palabra);
@@ -161,6 +185,7 @@ void interseccion(){
     fflush(stdin);
     gets(palabraDos);
     for (int i = 0; i < strlen(palabra); ++i) {
+<<<<<<< HEAD
         if (palabra[i]>= 'A' && palabra[i]<='Z'){
             palabra[i] = palabra[i] + 32;
         }
@@ -175,6 +200,10 @@ void interseccion(){
     for (int i = 0; i < strlen(palabra); ++i) {
         for (int j = 0; j < strlen(palabraDos); ++j) {
             if (palabra[i]==palabraDos[j]){
+=======
+        for (int j = 0; j < strlen(palabraDos); ++j) {
+            if (palabra[i]==palabraDos[j]||palabra[i]==palabraDos[j]-32||palabra[i]-32==palabraDos[j]){
+>>>>>>> 1808c75801641803029ba59276108105b9759f18
                 palabraModificada[contador]=palabra[i];
                 contador++;
                 break;
@@ -205,6 +234,7 @@ void diferenciaEntreCadenas(){
     for (int i = 0; i < strlen(palabraDos);i++) {
         contador=0;
         for (int j = 0; j <strlen(palabra) ; ++j) {
+<<<<<<< HEAD
             if (palabra[j]!=palabraDos[i]&&(palabra[j]!=palabraDos[i]-32)&&(palabra[j]-32!=palabraDos[i])) {
                 palabra[contador]=palabra[j];
                 contador++;
@@ -212,6 +242,15 @@ void diferenciaEntreCadenas(){
                 palabra[strlen(palabra)-k]=' ';
                 k++;
             }
+=======
+                if (palabra[j]!=palabraDos[i]&&(palabra[j]!=palabraDos[i]-32)&&(palabra[j]-32!=palabraDos[i])) {
+                    palabra[contador]=palabra[j];
+                    contador++;
+                }else{
+                    palabra[strlen(palabra)-k]=' ';
+                    k++;
+                }
+>>>>>>> 1808c75801641803029ba59276108105b9759f18
         }
         k=0;
     }
@@ -219,8 +258,13 @@ void diferenciaEntreCadenas(){
     char palabraFinal[1000]="";
     for (int i = 0; i < strlen(palabra); ++i) {
         if ((palabra[i]>='A'&&palabra[i]<='z')||palabra[i]==' '){
+<<<<<<< HEAD
             palabraFinal[contador]=palabra[i];
             contador++;
+=======
+               palabraFinal[contador]=palabra[i];
+               contador++;
+>>>>>>> 1808c75801641803029ba59276108105b9759f18
         }
     }
     printf("La diferencia entre las dos cadenas es: %s\n", palabraFinal);
